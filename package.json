@@ -4,6 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "cy:open-e2e": "cypress open --e2e --browser chrome",
+    "cy:open-unit": "cypress open --component --browser chrome",
+    "cy:run-e2e": "cypress run --e2e",
+    "cy:run-unit": "cypress run --component",
+    "cy:e2e": "start-server-and-test start http-get://2023q1-5.netlify.app cy:open-e2e",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -19,6 +24,12 @@
   "homepage": "https://github.com/ekater1na/cypress#readme",
   "devDependencies": {
     "@cypress/code-coverage": "^3.10.4",
-    "cypress": "^12.11.0"
+    "cypress": "^12.11.0",
+    "start-server-and-test": "^2.0.0"
+  },
+  "dependencies": {
+    "babel-plugin-istanbul": "^6.1.1",
+    "istanbul-lib-coverage": "^3.2.0",
+    "nyc": "^15.1.0"
   }
 }

@@ -4,6 +4,16 @@ describe('Text box with max characters', () => {
         cy.get('form')
             .find('input')
             .first()
-            .should('have.attr', 'placeholder')
+            .should('have.attr', 'placeholder', "First name")
+
+        cy.get('form')
+            .find('input')
+            .first()
+            .type('hi')
+
+        cy.get('form')
+            .find('input')
+            .first()
+            .should('have.value', 'hi')
     })
 })
